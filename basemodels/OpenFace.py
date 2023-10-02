@@ -377,6 +377,14 @@ def loadModel():
 
     model = Model(inputs=[myInput], outputs=norm_layer)
 
-    model.load_weights("./models/openface_weights.h5")
+    import os
+
+    file_name = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "models",
+        "openface_weights.h5",
+    )
+
+    model.load_weights(file_name)
 
     return model

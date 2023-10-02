@@ -1,4 +1,5 @@
 import numpy as np
+import os
 
 
 class DlibResNet:
@@ -6,9 +7,14 @@ class DlibResNet:
         import dlib
 
         self.layers = [DlibMetaData()]
-        model = dlib.face_recognition_model_v1(
-            "./models/dlib_face_recognition_resnet_model_v1.dat"
+
+        file_name = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            "models",
+            "lib_face_recognition_resnet_model_v1.dat",
         )
+
+        model = dlib.face_recognition_model_v1(file_name)
         self.__model = model
 
     def predict(self, img_aligned):

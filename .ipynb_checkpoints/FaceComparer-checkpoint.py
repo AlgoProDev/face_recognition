@@ -11,7 +11,7 @@ import logging
 import numpy as np
 import cv2
 import tensorflow as tf
-from .basemodels import (
+from face_recognition.basemodels import (
     VGGFace,
     OpenFace,
     Facenet,
@@ -21,7 +21,7 @@ from .basemodels import (
     ArcFace,
     SFace,
 )
-from .commons import functions, distance as dst
+from face_recognition.commons import functions, distance as dst
 
 warnings.filterwarnings("ignore")
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"

@@ -11,6 +11,7 @@ from tensorflow.keras.layers import Lambda
 from tensorflow.keras.layers import MaxPooling2D
 from tensorflow.keras.layers import add
 from tensorflow.keras import backend as K
+import os
 
 
 def scaling(x, scale):
@@ -2208,7 +2209,12 @@ def InceptionResNetV2(dimension=128):
 
 def loadModel():
     model = InceptionResNetV2()
+    file_name = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "models",
+        "facenet_weights.h5",
+    )
 
-    model.load_weights("./models/facenet_weights.h5")
+    model.load_weights(file_name)
 
     return model

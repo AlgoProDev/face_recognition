@@ -28,7 +28,15 @@ def loadModel():
     base_model.add(Dropout(rate=0.5, name="D0"))
     base_model.add(Dense(8631, activation="softmax", name="F8"))
 
-    base_model.load_weights("./models/VGGFace2_DeepFace_weights_val-0.9034.h5")
+    import os
+
+    file_name = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "models",
+        "VGGFace2_DeepFace_weights_val-0.9034.h5",
+    )
+
+    base_model.load_weights(file_name)
 
     deepface_model = Model(
         inputs=base_model.layers[0].input, outputs=base_model.layers[-3].output

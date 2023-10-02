@@ -11,6 +11,7 @@ from tensorflow.keras.layers import (
     Flatten,
     Dense,
 )
+import os
 
 
 def loadModel():
@@ -27,8 +28,13 @@ def loadModel():
         momentum=0.9, epsilon=2e-5, name="embedding", scale=True
     )(arcface_model)
     model = keras.models.Model(inputs, embedding, name=base_model.name)
+    file_name = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "models",
+        "arcface_weights.h5",
+    )
 
-    model.load_weights("./models/arcface_weights.h5")
+    model.load_weights(file_name)
 
     return model
 

@@ -60,7 +60,11 @@ def baseModel():
 
 def loadModel():
     model = baseModel()
-    output = "./models/vgg_face_weights.h5"
+    import os
+
+    output = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "models", "vgg_face_weights.h5"
+    )
 
     model.load_weights(output)
 

@@ -1,15 +1,16 @@
-import sys
+from . import Facenet
 import os
-
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.dirname(SCRIPT_DIR))
-
-from face_recognition.basemodels import Facenet
 
 
 def loadModel():
     model = Facenet.InceptionResNetV2(dimension=512)
 
-    model.load_weights("./models/facenet512_weights.h5")
+    file_name = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "models",
+        "facenet512_weights.h5",
+    )
+
+    model.load_weights(file_name)
 
     return model

@@ -1,30 +1,31 @@
 import os
-import zipfile
 import gdown
+import subprocess
 
 
-def download_folder_from_google_drive(subfolder_path, folder_path):
-    # This would be the link to the zip file on Google Drive.
+def download_folder_from_google_drive(folder_path):
     file_id = "1JGESpeciguUaKD902syAb15-qlFGLI5e"
     url = f"https://drive.google.com/uc?id={file_id}"
-    zip_file_path = folder_path + ".zip"
+    zip_file_path = os.path.join(folder_path + ".rar")
+
     gdown.download(url, zip_file_path, quiet=False)
+    os.mkdir(folder_path)
+    if os.path.exists(zip_file_path):
+        try:
+            rar_executable_path = "C:\\Program Files\\WinRAR\\WinRAR.exe"
+            subprocess.run([rar_executable_path, "x", zip_file_path, folder_path])
+        except Exception as e:
+            print(f"Error extracting {zip_file_path}: {e}")
+        else:
+            os.remove(zip_file_path)
+    else:
+        print(f"Error: {zip_file_path} does not exist!")
 
-    # Extract the zip file content to the folder_path
-    with zipfile.ZipFile(zip_file_path, "r") as zip_ref:
-        zip_ref.extractall(subfolder_path)
 
-    # Optionally, remove the zip file after extracting its content
-    os.remove(zip_file_path)
+script_dir = os.path.dirname(os.path.abspath(__file__))
+base_models = os.path.join(script_dir, "basemodels")
+folder_path = os.path.join(base_models, "models")
 
-
-# Specify the path where you expect the folder to be
-folder_path = os.path.join("./basemodels", "models")
-
-# Check if the folder exists
 if not os.path.exists(folder_path):
     print(f"models does not exist. Downloading from Google Drive...")
-
-    # Here, you need to implement or call the function/method to download
-    # the folder from Google Drive and save it to the specified path.
-    download_folder_from_google_drive("./basemodels", folder_path)
+    download_folder_from_google_drive(folder_path)

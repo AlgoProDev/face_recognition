@@ -1,9 +1,4 @@
 import os
-import sys
-
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.dirname(SCRIPT_DIR))
-
 import base64
 from pathlib import Path
 from PIL import Image
@@ -11,7 +6,7 @@ import requests
 import numpy as np
 import cv2
 from tensorflow.keras.preprocessing import image
-from face_recognition.detectors import FaceDetector
+from ..detectors import FaceDetector
 
 
 def get_deepface_home():

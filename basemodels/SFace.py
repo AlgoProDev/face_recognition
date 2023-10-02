@@ -24,7 +24,13 @@ class SFaceModel:
 
 
 def load_model():
-    file_name = "./models/face_recognition_sface_2021dec.onnx"
+    import os
+
+    file_name = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "models",
+        "face_recognition_sface_2021dec.onnx",
+    )
 
     model = SFaceModel(model_path=file_name)
 

@@ -1,14 +1,8 @@
-import os
-import sys
-
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.dirname(SCRIPT_DIR))
-
 import math
 from PIL import Image
 import numpy as np
-from face_recognition.commons import distance
-from face_recognition.detectors import OpenCvWrapper
+from ..commons import distance
+from . import OpenCvWrapper
 
 
 def build_model(detector_backend):
