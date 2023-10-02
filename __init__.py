@@ -19,7 +19,7 @@ def download_folder_from_google_drive(subfolder_path, folder_path):
 
 
 # Specify the path where you expect the folder to be
-folder_path = os.path.join("basemodels", "models")
+folder_path = os.path.join("./basemodels", "models")
 
 # Check if the folder exists
 if not os.path.exists(folder_path):
@@ -27,4 +27,4 @@ if not os.path.exists(folder_path):
 
     # Here, you need to implement or call the function/method to download
     # the folder from Google Drive and save it to the specified path.
-    download_folder_from_google_drive("basemodels", folder_path)
+    download_folder_from_google_drive("./basemodels", folder_path)
