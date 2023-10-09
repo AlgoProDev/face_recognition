@@ -60,14 +60,14 @@ Before streaming, you need to set up a database of facial images that the system
 ```
 facial_db/
 ├── Olti/
-    ├── olti1.png
-    └── olti2.jpg
+|    ├── olti1.png
+|    └── olti2.jpg
 ├── Gent/
-    ├── gent1.png
-    └── gent2.png
+|    ├── gent1.png
+|    └── gent2.png
 └── Alice/
-    ├── alice1.jpg
-    └── alice2.png
+     ├── alice1.jpg
+     └── alice2.png
 ```
 2. Start the Video Stream:
 After setting up your database, you can start the real-time video stream for face recognition. Use the stream function and point it to your database:
