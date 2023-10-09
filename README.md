@@ -3,14 +3,15 @@
 Face recognition and analysis has never been easier. "face_recognition" is a Python wrapper for deep learning-based face recognition models from famous frameworks inside a single library. With this script, you can utilize multiple face recognition models, perform verification, and even stream video to recognize faces in real-time.
 
 ## Features
-- Multiple Models Support: VGG-Face, Facenet, OpenFace, DeepFace, DeepID, Dlib, ArcFace, and SFace.
-- Face Verification: Check if two faces are identical or belong to the same person.
-- Face Representation: Extract numerical vector representations for a given facial image.
-- Real-time Video Stream Analysis: Recognize and analyze faces in real-time using your webcam or other video sources.
-- Face Detection and Alignment: Built-in support for various face detectors including opencv, retinaface, mtcnn, ssd, dlib, mediapipe, and yolov8.
-- Database Integration: Search and identify faces within a provided database.
-- Built-in Distance Metrics: cosine, euclidean, euclidean_l2 metrics for facial similarity checks.
-- Extendable: Easy integration of new models and tools within the existing framework.
+- *Multiple Models Support*: VGG-Face, Facenet, OpenFace, DeepFace, DeepID, Dlib, ArcFace, and SFace.
+- *Face Verification*: Check if two faces are identical or belong to the same person.
+- *Face Representation*: Extract numerical vector representations for a given facial image.
+- *Real-time Video Stream Analysis*: Recognize and analyze faces in real-time using your webcam or other video sources.
+- *Face Detection and Alignment*: Built-in support for various face detectors including opencv, retinaface, mtcnn, ssd, dlib, mediapipe, and yolov8.
+- *Database Integration*: Search and identify faces within a provided database.
+- *Built-in Distance Metrics*: cosine, euclidean, euclidean_l2 metrics for facial similarity checks.
+- *Extendable*: Easy integration of new models and tools within the existing framework.
+  
 ## How to Use
 1. Build a FaceComparer Model:
 ```
